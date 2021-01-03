@@ -1,0 +1,62 @@
+.App {
+	text-align: center;
+}
+.cart-button {
+	cursor: pointer;
+}
+.header {
+	text-align: center;
+	width: 100%;
+}
+.body {
+	display: flex;
+	flex-direction: row;
+}
+.sidebar {
+	justify-items: left;
+	position: relative;
+	border: solid black;
+	width: 15vw;
+}
+.item-selection {
+	position: absolute;
+	left: 25%;
+	width: 100%;
+	width: 50vw;
+	border: solid black;
+}
+.cart-button {
+	position: fixed;
+	top: 15px;
+	left: 16px;
+}
+.addToCart:active {
+	animation-name: addedToCart;
+}
+.closeBtn {
+	position: relative;
+	left: 100px;
+	top: 15px;
+}
+.cart {
+	display: block;
+}
+.cartItem {
+	display: flex;
+}
+.delBtn {
+	height: 20px;
+}
+.delBtnDiv {
+	position: fixed;
+	left: 12.5%;
+	margin-top: 15px;
+}
+.p {
+	text-align: right;
+	position: fixed;
+}
+.cartQuantity {
+	position: fixed;
+	left: 10%;
+}

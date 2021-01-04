@@ -7,14 +7,11 @@ export default function Header({setShow, show, cartItems}) {
     }
 
     return (
-        <div className='items'>
-            
-            <div className='header'>
-                <h1 >shopping</h1>
-                <AnimateOnChange>
-                    <span className='cart-button' onClick={toggleCart}>&#9776; Open Cart({cartItems.length})</span>
-                </AnimateOnChange>
-            </div>
+        <div className='header'>
+            <h1>Variety Store</h1>
+            <AnimateOnChange>
+                <span className='cart-button' onClick={toggleCart}>&#9776; Cart({cartItems.length})</span>
+            </AnimateOnChange>
         </div>
     )
 }

@@ -2,17 +2,31 @@ import React from 'react'
 
 
 export default function Button(props) {
+
+
+    const addToCart = () => {
+        console.log(props.cartItems)
+        if (props.cartItems.indexOf(props.item) == -1) {
+            props.item.isInCart = true;
+            props.item.quantity += 1;
+            props.setCartItems([...props.cartItems, props.item]);
+        } else {
+            props.item.quantity += 1;
+            props.item.isInCart = true;
+        }
+    }
     //Populates the button and it's identifiers from the Data.js file by passing props in from the Body.js file
     return (
         <div className='itemObject'>
-            <p>{props.name}</p>
-            <p>{props.desc}</p>
-            <p>{props.price}</p>
+            <img className='productImg' src={props.img} alt="the product"/>
+            <p className='name' >{props.name}</p>
+            <p className='desc' >{props.desc}</p>
+            <p className='price' >${props.price}</p>
             <button
-                className='addToCart'
+                className='addToCart btn'
                 id={props.id}
-                onClick={() => props.addToCart(props.item)}>
-                Add To Cart</button> 
+                onClick={addToCart}>
+                Add To Cart</button>
         </div>
     )
 }

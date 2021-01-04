@@ -2,8 +2,6 @@ import React from 'react'
 
 
 export default function Button(props) {
-
-
     const addToCart = () => {
         if (props.cartItems.indexOf(props.item) === -1) {
             props.item.isInCart = true;

@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import Sidebar from './Sidebar'
 
-export default function Body({ setCartItems, cartItems, show, setShow, showModal, setShowModal, total, setTotal, quantity, updateQuantity, isInCart, toggleInCart, inventory, setInventory }) {
+export default function Body({ setCartItems, cartItems, show, setShow, showModal, setShowModal, total, setTotal, isInCart, toggleInCart, inventory,}) {
     // Populates the page with the sidebar/cart fucntionality and the buttons and item descriptions from the Data.js file
     return (
         <div className="body">

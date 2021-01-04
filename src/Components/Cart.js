@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-export default function Cart({ setCartItems, cartItems, showModal, setShowModal, total, setTotal, toggleInCart}) {
+export default function Cart({ setCartItems, cartItems, setShowModal, total, setTotal, toggleInCart}) {
 
     // Sets up an array and the total in order to map through cart items and gather the data and then push those values into the itemPrices array
     const getTotalPrice = () => {
@@ -26,7 +26,7 @@ export default function Cart({ setCartItems, cartItems, showModal, setShowModal,
         setTotal(0)
     }
 
-    // TODO
+    // Maps through the cart and checks if the quanitity is above 0 and subtracts from the total iteratively
     const delItem = () => {
         cartItems.map(item => {
             if (item.quantity <= 0) {
@@ -42,7 +42,7 @@ export default function Cart({ setCartItems, cartItems, showModal, setShowModal,
     const removeFromCart = () => {
         toggleInCart(false)
     }
-    // TODO
+    
     
     return (
         <div className="cart">

@@ -80,7 +80,7 @@ export default function Checkout(props, {showModal, setShowModal, total}) {
                     </select>
                 </Modal.Body>
                 <Modal.Footer>
-                    <h4>Your total is: {total}</h4>
+                    <h4>Your total is: {props.total.toFixed(2)}</h4>
                     <button>Checkout</button>
                 </Modal.Footer>
             </Modal>

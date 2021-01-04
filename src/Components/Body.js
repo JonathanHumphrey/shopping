@@ -1,9 +1,8 @@
 import React from 'react'
 import Button from './Button'
-import { items, cart } from '../Data/Data'
 import Sidebar from './Sidebar'
 
-export default function Body({ setCartItems, cartItems, show, setShow, showModal, setShowModal, quantity, updateQuantity, isInCart, toggleInCart, inventory, setInventory }) {
+export default function Body({ setCartItems, cartItems, show, setShow, showModal, setShowModal, total, setTotal, quantity, updateQuantity, isInCart, toggleInCart, inventory, setInventory }) {
     // Populates the page with the sidebar/cart fucntionality and the buttons and item descriptions from the Data.js file
     return (
         <div className="body">
@@ -15,7 +14,10 @@ export default function Body({ setCartItems, cartItems, show, setShow, showModal
                     show={show}
                     showModal={showModal}
                     setShowModal={setShowModal}
-                    
+                    total={total}
+                    setTotal={setTotal}
+                    isInCart={isInCart}
+                    toggleInCart={toggleInCart}
                 />
                 : null}
             <div className="item-selection">

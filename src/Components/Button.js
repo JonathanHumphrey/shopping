@@ -5,8 +5,7 @@ export default function Button(props) {
 
 
     const addToCart = () => {
-        console.log(props.cartItems)
-        if (props.cartItems.indexOf(props.item) == -1) {
+        if (props.cartItems.indexOf(props.item) === -1) {
             props.item.isInCart = true;
             props.item.quantity += 1;
             props.setCartItems([...props.cartItems, props.item]);

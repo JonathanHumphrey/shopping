@@ -1,7 +1,7 @@
 import React from 'react'
 import Cart from './Cart'
 
-export default function Sidebar({cartItems, setCartItems, show, setShow, quantity, updateQuantity, showModal, setShowModal}) {
+export default function Sidebar({cartItems, setCartItems, show, setShow, quantity, updateQuantity, showModal, setShowModal, total, setTotal, isInCart, toggleInCart}) {
     function toggleCart() {
         setShow(!show)
     }
@@ -18,6 +18,10 @@ export default function Sidebar({cartItems, setCartItems, show, setShow, quantit
                     updateQuantity={updateQuantity}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                    total={total}
+                    setTotal={setTotal}
+                    isInCart={isInCart}
+                    toggleInCart={toggleInCart}
                 />
             </div>
         </div>

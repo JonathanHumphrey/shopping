@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-
-export default function Cart({ setCartItems, cartItems, toggleCheckout, showModal, setShowModal}) {
-    // Sets up state to keep track of the subtotal of the items added into the cart
-    let [total, setTotal] = useState(0)
+export default function Cart({ setCartItems, cartItems, showModal, setShowModal, total, setTotal, toggleInCart}) {
 
     // Sets up an array and the total in order to map through cart items and gather the data and then push those values into the itemPrices array
     const getTotalPrice = () => {
@@ -17,12 +14,10 @@ export default function Cart({ setCartItems, cartItems, toggleCheckout, showModa
             return a + b
         }) : 0
         setTotal(result)
-
     }
     // only calculates the total when cart items is updated
     useEffect(() => {
         getTotalPrice()
-        console.log(total)
     }, [cartItems])
 
     const clearCart = () => {
@@ -33,7 +28,19 @@ export default function Cart({ setCartItems, cartItems, toggleCheckout, showModa
 
     // TODO
     const delItem = () => {
-        console.log(cartItems)
+        cartItems.map(item => {
+            if (item.quantity <= 0) {
+                removeFromCart(item)
+            }
+            else {
+                item.quantity--
+                setTotal(total => total- item.price)
+            }
+        })
+    }
+
+    const removeFromCart = () => {
+        toggleInCart(false)
     }
     // TODO
     

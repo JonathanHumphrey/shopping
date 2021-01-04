@@ -4,6 +4,7 @@ import Header from './Components/Header'
 import Body from './Components/Body'
 import Checkout from './Components/Checkout'
 import { items } from './Data/Data';
+import {cart} from './Data/Data';
 import './App.css';
 
 function App() {
@@ -14,9 +15,8 @@ function App() {
   const [show, setShow] = useState(false)
   const [isInCart, toggleInCart] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [total, setTotal] = useState(0)
 
-
-  
   return (
     <div className="App">
       <Header
@@ -27,6 +27,7 @@ function App() {
       <Checkout
         show={showModal}
         onHide={() => setShowModal(false)}
+        total={total}
       />
       <Body
         inventory={inventory}
@@ -39,9 +40,9 @@ function App() {
         toggleInCart={toggleInCart}
         showModal={showModal}
         setShowModal={setShowModal}
+        total={total}
+        setTotal={setTotal}
       />
-      
-      
     </div>
   );
 }
